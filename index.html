@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <header>
+      <div class="box">
+        <div class="logo center">
+          <img src="./images/logo.svg" alt="Not found" />
+        </div>
+        <nav>
+          <ul class="links center">
+            <li id="arrow1" class="arrow">
+              Features
+              <ul class="showFeatures">
+                <a href="">
+                  <img src="./images/icon-todo.svg" />
+                  <li>Todo list</li>
+                </a>
+                <a href="">
+                  <img src="./images/icon-calendar.svg" />
+                  <li>Calender</li>
+                </a>
+                <a href="">
+                  <img src="./images/icon-reminders.svg" />
+                  <li>Reminders</li>
+                </a>
+                <a href="">
+                  <img src="./images/icon-planning.svg" />
+                  <li>Planning</li>
+                </a>
+              </ul>
+            </li>
+            <li id="arrow2" class="arrow">
+              Company
+              <ul class="showCompany">
+                <a href="">
+                  <li>History</li>
+                </a>
+                <a href="">
+                  <li>Our Team</li>
+                </a>
+                <a href="">
+                  <li>Blog</li>
+                </a>
+              </ul>
+            </li>
+            <li>Careers</li>
+            <li>About</li>
+          </ul>
+          <div class="entering">
+            <div class="login center">Login</div>
+            <div class="register center">Register</div>
+          </div>
+        </nav>
+        <div class="threeDots">
+          <img src="./images/icon-menu.svg" alt="" />
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <h2>Make <span>remote work</span></h2>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button type="button">Learn More</button>
+        <div class="partners">
+          <ul>
+            <li><img src="./images/client-databiz.svg" alt="" /></li>
+            <li><img src="./images/client-audiophile.svg" alt="" /></li>
+            <li><img src="./images/client-meet.svg" alt="" /></li>
+            <li><img src="./images/client-maker.svg" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+      <div class="big-img">
+        <picture>
+          <source
+            media="(min-width:992px)"
+            srcset="./images/image-hero-desktop.png"
+          />
+          <source
+            media="(min-width:330px)"
+            srcset="./images/image-hero-mobile.png"
+          />
+          <img src="./images/image-hero-mobile.png" alt="" />
+        </picture>
+      </div>
+    </section>
+    <div class="attribution">
+      Challenge by
+      <a href="">Frontend Mentor</a>. Coded by
+      <a href="Emadcode.com">Emadcode.com</a>.
+    </div>
+    <script src="./index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"
+    ></script>
+
+    <script type="text/javascript" language="javascript">
+      $(".arrow").hover(
+        function () {
+          $(this).css("--down", "url(./images/icon-arrow-up.svg)");
+          $(this).css("filter", "brightness(0.3)");
+        },
+        function () {
+          $(this).css("--down", "url(./images/icon-arrow-down.svg)");
+          $(this).css("filter", "none");
+        }
+      );
+    </script>
+  </body>
+</html>

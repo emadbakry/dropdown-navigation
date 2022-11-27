@@ -1,0 +1,260 @@
+/* coded by Emadcode.com  */
+/* note: this was coded couples of months ago, my skills are diff now */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Cairo:wght@500;600;700&family=Epilogue:wght@400;500;600;700;800&family=Lexend+Deca&family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,400;1,700&display=swap');
+
+
+:root {
+--mainColor:hsl(0, 0%, 41%);
+--up:url(./images/icon-arrow-up.svg);
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    list-style: none !important;
+}
+/* header  */
+header {
+    margin: 20px;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centerX {
+    display: flex;
+    justify-content: center;
+}
+.logo {
+    align-items: flex-end;
+    padding: 5px 10px;
+}
+header .box{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+header .box  > ul{
+    display: flex;
+}
+/* put an arrow right the li */
+header .arrow {
+    position: relative;
+    --down:url(./images/icon-arrow-down.svg);
+}
+header .arrow:after {
+    content: var(--down,url(./images/icon-arrow-down.svg));
+    position: absolute;
+    margin-left: 5px;
+    /* --down:url(./images/icon-arrow-up.svg); */
+}
+
+.links > li:hover {
+    color: hsl(0, 0%, 8%);
+}
+.arrow:hover  ul{
+    display: block;
+}
+.arrow > .showFeatures, .arrow > .showCompany{
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0px 9px 30px 0px hsl(0deg 0% 41% / 38%);
+    border-radius: 15px;
+    left: -65px;
+    top: 40px;
+}
+.showCompany > a, .showFeatures > a {
+    display: flex;
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 5px 0px;
+    text-decoration: none;
+    color: var(--mainColor);
+    white-space: nowrap;
+}
+.showFeatures > a > img {
+    margin-right: 20px;
+}
+.showCompany {
+    right: auto;
+    left: 25px !important;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+header ul.links {
+    display: flex;
+    justify-content: space-between;
+    color: var(--mainColor);
+    font-family: 'Epilogue', sans-serif;
+    font-size: 14px;
+}
+header ul.links > li {
+    margin-left: 5px;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px 30px;
+    cursor: pointer;
+    filter: none  !important;
+}
+.links ul li {
+    transition: 0.3s;
+}
+
+header .links ul a:hover li {
+    transform: translateX(10px);
+}
+header .links .showCompany {
+
+}
+
+.entering {
+    display: flex;
+    color: var(--mainColor);
+    font-family: 'Epilogue', sans-serif;
+}
+.entering > div {
+    margin-left: 30px;
+    text-align: center;
+    font-weight: 500;
+
+}
+.entering .register {
+    border: 2px solid var(--mainColor);
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.entering > *:hover {
+    border-color: ;
+}
+.threeDots {
+    display: none;
+}
+@media (max-width:767px)  {
+    nav {
+        display: none !important;
+    }
+    .threeDots {
+        display: block;
+    }
+}
+
+/*the content ( container)  */
+section {
+    display: flex;
+    padding: 30px 50px;
+}
+.container {
+    margin: 70px 0 5px 90px;
+    display: grid;
+    box-sizing: content-box;
+}
+.container ul {
+    display: flex;
+}
+.container>h2 {
+    font-weight: bold;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 70px;
+    margin-top: 40px;
+}
+.container > h2 span {
+    white-space: nowrap;
+}
+.container>p {
+    font-size: 18px;
+    font-family: 'Epilogue', sans-serif;
+    color:var(--mainColor);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    line-height: 26px;
+}
+.container>h2>span {
+    display: block;
+}
+.container button {
+    display: block !important;
+    width: 150px;
+    height: 55px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: hsl(0, 0%, 8%);
+    cursor: pointer;
+    color: hsl(0, 0%, 98%);
+    border-radius: 15px;
+    font-weight: bold;
+    font-family: 'Epilogue', sans-serif;
+}
+.partners {
+    align-self: flex-end;
+}
+.partners ul li{
+    margin-left: 15px;
+}
+.partners li img{
+    width: 80px;
+}
+.big-img {
+    width: 50%;
+    height: auto;
+    margin: 20px 70px;
+}
+.big-img picture img {
+    width: 250px;
+    width: calc(40% + 20vw);
+}
+@media (max-width:767px) {
+    section {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .big-img {
+        width: 100%;
+        margin: 0;
+    }
+    .big-img picture img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+.attribution {
+
+    margin: 10px;
+    background-color: var(--mainColors,blueviolet);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: calc(1vw + 4px);
+    font-family: 'Roboto', sans-serif;
+}
+.attribution a {
+    margin: auto 5px;
+    text-decoration: none;
+    color: aqua;
+    letter-spacing: 1px;
+}
+
+
+
