@@ -15,6 +15,9 @@
 ul li{
     list-style: none;
 }
+html,body {
+    scroll-behavior: smooth;
+}
 /* header  */
 header {
     margin: 1.25rem;
@@ -46,9 +49,13 @@ header .box  > ul{
 }
 /* put an arrow right the li */
 header .arrow {
+    cursor: pointer;
     transition: 0.4s;
     position: relative;
     --down:url(./images/icon-arrow-down.svg);
+}
+header .arrow.clicked {
+    --down:url(./images/icon-arrow-up.svg);
 }
 header .arrow:after {
     content: var(--down,url(./images/icon-arrow-down.svg));
@@ -61,7 +68,7 @@ header .arrow:after {
     color: hsl(0, 0%, 8%);
 }
 
-.arrow:hover  ul{
+.arrow.clicked  ul{
     display: block;
 }
 .arrow > .showFeatures, .arrow > .showCompany{
@@ -202,12 +209,10 @@ header .links .showCompany {
       padding: 15px 0;
       border-radius: 16px;
     }
-    .arrow:hover {
+    .arrow.clicked {
     margin-bottom: 150px;
     }
-    .arrow:hover::selection {
-        background-color: transparent;
-    }
+
     .arrow ul.showFeatures,
     .arrow ul.showCompany {
     box-shadow: none;
