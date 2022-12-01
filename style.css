@@ -189,7 +189,7 @@ header .links .showCompany {
     top: 0px;
     height: 100vh;
     padding-top: 80px;
-
+    box-shadow: -5px 0px 20px 4px rgb(68 68 68 / 25%);
     }
     
     nav > ul.links {
@@ -293,7 +293,16 @@ section {
     width: 250px;
     width: calc(40% + 20vw);
 }
+@media (max-width:992px) {
+    .container {
+        margin: 5vw 0 5px 4vw;
+    }
+    .container h2 {
+        font-size: 3rem;
+    }
+}
 @media (max-width:767px) {
+    
     section {
         display: flex;
         flex-direction: column-reverse;

@@ -3,12 +3,17 @@
 let nav = document.querySelector('nav');
 let burger_icon = document.querySelector('.threeDots');
 
-burger_icon.addEventListener('click', () => {
-    nav.toggleAttribute('opened');
-    burger_icon.toggleAttribute('close_icon');
-});
+let open_nav = () => {
+    nav.toggleAttribute("opened");
+    burger_icon.toggleAttribute("close_icon");
+}
+burger_icon.addEventListener('click', () =>open_nav());
     
-document.querySelector('section').addEventListener('click',()=>toggle_class('remove'));
+document.querySelector('section').addEventListener('click', () => {
+    toggle_class('remove');
+     nav.removeAttribute("opened");
+     burger_icon.removeAttribute("close_icon");
+});
 let toggle_class = (ele) => {
     ele == 'remove'
          ? sub_lis.forEach((el)=>el.classList.remove('clicked'))
