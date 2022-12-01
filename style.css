@@ -60,7 +60,8 @@ header .arrow.clicked {
 header .arrow:after {
     content: var(--down,url(./images/icon-arrow-down.svg));
     position: absolute;
-    margin-left: 5px;
+    right:auto;
+    margin-left: 10px;
     /* --down:url(./images/icon-arrow-up.svg); */
 }
 
