@@ -13,16 +13,17 @@
     margin: 0;
 }
 ul li{
-    list-style: none !important;
+    list-style: none;
 }
 /* header  */
 header {
-    margin: 20px;
+    margin: 1.25rem;
 }
 .center {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 .centerX {
     display: flex;
@@ -31,6 +32,9 @@ header {
 .logo {
     align-items: flex-end;
     padding: 5px 10px;
+}
+.logo img {
+    min-height: 35px;
 }
 header .box{
     display: flex;
@@ -42,6 +46,7 @@ header .box  > ul{
 }
 /* put an arrow right the li */
 header .arrow {
+    transition: 0.4s;
     position: relative;
     --down:url(./images/icon-arrow-down.svg);
 }
@@ -55,6 +60,7 @@ header .arrow:after {
 .links > li:hover {
     color: hsl(0, 0%, 8%);
 }
+
 .arrow:hover  ul{
     display: block;
 }
@@ -70,8 +76,9 @@ header .arrow:after {
 }
 .showCompany > a, .showFeatures > a {
     display: flex;
+    align-items: center;
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 1rem;
     padding: 5px 0px;
     text-decoration: none;
     color: var(--mainColor);
@@ -94,7 +101,7 @@ header ul.links {
     justify-content: space-between;
     color: var(--mainColor);
     font-family: 'Epilogue', sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 header ul.links > li {
     margin-left: 5px;
@@ -103,6 +110,10 @@ header ul.links > li {
     padding: 15px 30px;
     cursor: pointer;
     filter: none  !important;
+}
+header ul.links > li ul li img {
+    min-width: 15px;
+    max-height: 15px;
 }
 .links ul li {
     transition: 0.3s;
@@ -120,7 +131,7 @@ header .links .showCompany {
     color: var(--mainColor);
     font-family: 'Epilogue', sans-serif;
 }
-.entering > div {
+.entering > a {
     margin-left: 30px;
     text-align: center;
     font-weight: 500;
@@ -133,20 +144,73 @@ header .links .showCompany {
     cursor: pointer;
 }
 .entering > *:hover {
-    border-color: ;
+    opacity: 0.5;
 }
 .threeDots {
     display: none;
 }
 @media (max-width:767px)  {
-    nav {
-        display: none !important;
+    header {
+        
+        margin: 1rem 0.8rem;
     }
     .threeDots {
+        height: 50px;
+        width: 50px;
+        padding: 5px 10px 15px 15px;
+        display: block;
+        position: relative;
+        z-index: 3;
+    }
+    .threeDots img.close_icon {
+        display: none;
+    }
+    .threeDots[close_icon] img.close_icon { 
         display: block;
     }
-}
+    .threeDots[close_icon] img.burger_icon {
+        display: none;
+    }   
+    nav {
+    transition: 0.4s;
+    display: block !important;
+    position: fixed;
+    width: 200px;
+    background-color: #fff;
+    z-index: 2;
+    right: -300px;
+    top: 0px;
+    height: 100vh;
+    padding-top: 80px;
 
+    }
+    
+    nav > ul.links {
+        display: block;
+    }
+    nav > ul.links > li{
+        text-align: left;
+    }
+    nav > .entering {
+      display: block;
+      margin: 40px auto;
+
+    }
+    nav > .entering .center{
+      margin:10px auto;
+      width: 80%;
+      padding: 15px 0;
+      border-radius: 16px;
+    }
+    .arrow:hover {
+    margin-bottom: 150px;
+    }
+    .arrow ul.showFeatures,
+    .arrow ul.showCompany {
+    box-shadow: none;
+    left: 0px !important;
+    }
+}
 /*the content ( container)  */
 section {
     display: flex;
@@ -163,14 +227,14 @@ section {
 .container>h2 {
     font-weight: bold;
     font-family: 'Epilogue', sans-serif;
-    font-size: 70px;
+    font-size: 4.375rem;
     margin-top: 40px;
 }
 .container > h2 span {
     white-space: nowrap;
 }
 .container>p {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-family: 'Epilogue', sans-serif;
     color:var(--mainColor);
     margin-top: 10px;
@@ -181,10 +245,14 @@ section {
 .container>h2>span {
     display: block;
 }
-.container button {
-    display: block !important;
-    width: 150px;
+.container a {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 160px;
     height: 55px;
+    transition: 0.3s;
     margin-bottom: 30px;
     border: none;
     background-color: hsl(0, 0%, 8%);
@@ -193,6 +261,11 @@ section {
     border-radius: 15px;
     font-weight: bold;
     font-family: 'Epilogue', sans-serif;
+}
+.container a:hover {
+    border: 2px solid hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 8%);
+    background-color: hsl(0, 0%, 98%);
 }
 .partners {
     align-self: flex-end;
@@ -226,12 +299,51 @@ section {
         width: 100%;
         max-width: 100%;
     }
+    .container {
+        margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container>h2 {
+        font-size: calc(1.5rem + 2vw) ;
+        text-align: center;
+        width: 100%;
+    }
+    .container>h2 > span {
+        display: inline;
+    }
+    .container p {
+        font-size: 1rem;
+        padding: 5px;
+        max-width: none;
+        text-align: center;
+    }
+    .container > a {
+        margin: 20px auto;
+    }
+    .partners {
+        margin-top: 40px;
+        width: 100%;
+    }
+    .partners > ul {
+        display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(60px,1fr));
+    }
+    .partners > ul img{
+        width: 100%;
+    }
 }
 
 
+@media only screen and (max-width:991px) {
+        header ul.links > li {
+            padding: 15px 20px;
+        }
+}
 
-
-
+nav[opened] {
+    right: 0 !important;
+}
 
 
 .attribution {
