@@ -135,7 +135,7 @@ header .links .showCompany {
     margin-left: 30px;
     text-align: center;
     font-weight: 500;
-
+    color: var(--mainColor);
 }
 .entering .register {
     border: 2px solid var(--mainColor);
@@ -204,6 +204,9 @@ header .links .showCompany {
     }
     .arrow:hover {
     margin-bottom: 150px;
+    }
+    .arrow:hover::selection {
+        background-color: transparent;
     }
     .arrow ul.showFeatures,
     .arrow ul.showCompany {
